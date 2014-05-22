@@ -20,14 +20,5 @@ module.exports = (robot) ->
   # robot.respond /this means war/i, (msg) ->
   #   msg.send war
 
-  robot.hear /this means war/i, (msg) ->
+  robot.hear /(.*)this means war(.*)/i, (msg) ->
     msg.send war
-
-  robot.respond /war2/i, (msg) ->
-    msg.send war
-
-  robot.hear /war3/i, (msg) ->
-    msg.send swar
-
-  robot.respond /war4/i, (msg) ->
-    msg.send swar
