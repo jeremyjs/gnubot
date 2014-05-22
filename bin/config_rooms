@@ -1,1 +1,1 @@
-heroku config:add HUBOT_SLACK_CHANNELS=interns,notes,nubot_testing
+heroku config:add HUBOT_SLACK_CHANNELS=interns,notes
