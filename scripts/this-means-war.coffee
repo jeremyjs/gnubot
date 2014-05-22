@@ -20,5 +20,5 @@ module.exports = (robot) ->
   # robot.respond /this means war/i, (msg) ->
   #   msg.send war
 
-  robot.hear /(.*)this means war(.*)/i, (msg) ->
+  robot.hear /(.*)this means war( |,|.|!)(.*)/i, (msg) ->
     msg.send war
