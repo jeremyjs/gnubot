@@ -20,4 +20,5 @@ module.exports = (robot) ->
   robot.hear /this means war/i, (msg) ->
     msg.http(war)
       .get() (err, res, body) ->
+        console.log(body)
         msg.send JSON.parse(body)
