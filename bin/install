@@ -24,6 +24,5 @@ do
     cat tmp$$
     bin/.delete $pkg
   fi
+  rm -f tmp$$
 done < .data/packages
-
-rm -f tmp$$

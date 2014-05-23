@@ -9,6 +9,7 @@ do
     echo $1 >> .data/installed
   fi
   shift
+  rm -f tmp$$
 done
 
 sort .data/installed > tmp$$
