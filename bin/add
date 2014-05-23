@@ -1,0 +1,18 @@
+#!/usr/bin/env zsh
+
+while [ $# -gt 0 ]
+do
+  grep $1 .data/packages > tmp$$
+  if [[ -s tmp$$ ]]
+  then
+    echo "$1 already added"
+  else
+    echo "$1 added"
+    echo $1 >> .data/packages
+  fi
+  shift
+done
+
+sort .data/packages > tmp$$
+cat tmp$$ > .data/packages
+rm tmp$$

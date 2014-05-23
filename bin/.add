@@ -1,0 +1,16 @@
+#!/usr/bin/env zsh
+
+while [ $# -gt 0 ]
+do
+  grep $1 .data/installed > tmp$$
+  if [[ -s tmp$$ ]]
+  then
+  else
+    echo $1 >> .data/installed
+  fi
+  shift
+done
+
+sort .data/installed > tmp$$
+cat tmp$$ > .data/installed
+rm tmp$$

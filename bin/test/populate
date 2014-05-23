@@ -1,0 +1,4 @@
+bin/add-script test
+bin/add-script xkcd
+bin/add-script bob
+bin/add-script doug

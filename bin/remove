@@ -1,0 +1,5 @@
+#!/usr/bin/env zsh
+
+sed "/^$1$/d" .data/packages > tmp$$
+cat tmp$$ > .data/packages
+rm tmp$$

@@ -1,0 +1,29 @@
+#!/usr/bin/env zsh
+
+while read pkg
+do
+  if [[ -e "scripts/packages/$pkg.coffee" ]]
+  then
+  else
+    echo "fetching $pkg..."
+    if [[ -e node_modules/hubot-scripts/src/scripts/$pkg.coffee ]]
+    then
+      cp node_modules/hubot-scripts/src/scripts/$pkg.coffee scripts/packages/
+    else
+      echo "$pkg not found"
+      exit
+    fi
+  fi
+  coffeelint scripts/packages/$pkg.coffee > tmp$$
+  if grep -q '✓' tmp$$
+  then
+    echo "✓ $pkg installed"
+    bin/.add $pkg
+  else
+    echo "✗ $pkg not installed:"
+    cat tmp$$
+    bin/.delete $pkg
+  fi
+done < .data/packages
+
+rm -f tmp$$

@@ -1,0 +1,7 @@
+  ✗ scripts/packages/poem.coffee
+     ✗ #2: Line exceeds maximum allowed length. Length is 89, max is 80.
+     ✗ #26: Line ends with trailing whitespace.
+     ✗ #30: Line contains inconsistent indentation. Expected 2 got 4.
+
+✗ Lint! » 3 errors and 0 warnings in 1 file
+
